@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 100%;
+  background: #4db2ee;
+}
+
+.resume{
+  width: 20%;
+  float: left;
+  height: 100%;
+  text-align: center;
+  background: #4db2ee;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.Info{
+  width: 80%;
+  float: left;
+  background: #fff;
+  padding-left: 20px;
+  box-sizing: border-box;
+
+}
+
+.baseInfo>span{
+  font-weight: 600;
+  padding-right: 0.5em;
+}
+
+.baseInfo>span:nth-child(n+2){
+  padding-left: 2em;
+}
+
+.desc-title{
+  font-weight: bold;
+  display: block;
+}
+
+.listDesc>div:nth-child(n+2){
+  margin-top: 20px;
+}
+
+.clearfix{
+  clear: both;
+}

@@ -1,123 +1,124 @@
 
-html,body{
-  margin: 0;
+html,body {
+    margin: 0;
 }
 
-header,footer{
-  height: 80px;
-  background: rgb(51,51,51);
+header,
+footer {
+    height: 80px;
+    background: rgba(51, 51, 51, 0.8);
 }
 
-.headerContent{
-  width: 960px;
-  height: 100%;
-  margin: 0 auto;
+.headerContent {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
 }
 
-.headerContent .logo{
-  line-height: 80px;
-  font-size: 24px;
-  float: left;
-  color: #fff;
+.headerContent .logo {
+    line-height: 80px;
+    font-size: 24px;
+    float: left;
+    color: #fff;
 }
 
-.headerContent .navigator{
-  float: right;
+.headerContent .navigator {
+    float: right;
 }
 
-.headerContent a{
-  color: #fff;
-  font-size: 12px;
+.headerContent a {
+    color: #fff;
+    font-size: 12px;
 }
 
-.banner{
-  height: 200px;
-  background: rgb(102,187,51);
-  position: relative;
+.banner {
+    height: 200px;
+    background: rgba(102, 187, 51, 1);
+    position: relative;
 }
 
-.bannerTag{
-  width: 960px;
-  height: 100%;
-  margin: 0 auto;
-  right: 0;
-  position: relative;
+.bannerTag {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    right: 0;
+    position: relative;
 }
 
-.bannerTag>ul{
-  position: absolute;
-  display: flex;
-  right: 0;
-  bottom: 0;
-  align-items: flex-end;
+.bannerTag > ul {
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    align-items: flex-end;
 }
 
-.bannerTag>ul>li{
-
-  list-style-type: none;
-  padding: 5px;
-  margin: 4px 0 0 4px;
-  height: 20px;
-  line-height: 20px;
-  border: 1px solid #333;
-  background: rgb(178,221,153);
+.bannerTag > ul > li {
+    list-style-type: none;
+    padding: 5px;
+    margin: 4px 0 0 4px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #333;
+    background: rgba(178, 221, 153, 1);
 }
 
-.bannerTag>ul>li:nth-child(2){
-  background: #fff;
-  height: 30px;
-  line-height: 40px;
+.bannerTag > ul > li:nth-child(2) {
+    background: #fff;
+    height: 30px;
+    line-height: 40px;
 }
 
-.tabCt{
-  box-sizing: border-box;
-  height: 50px;
-  border-bottom: #ccc 1px solid;
+.tabCt {
+    box-sizing: border-box;
+    height: 50px;
+    border-bottom: #ccc 1px solid;
 }
 
-.tabCt .tabItem{
-  width: 960px;
-  margin: 0 auto;
-  height: calc(100% + 1px);
-  margin-top: 1px;
-  display: flex;
-  align-items: flex-end;
+.tabCt .tabItem {
+    width: 960px;
+    margin: 0 auto;
+    height: calc(100% + 1px);
+    margin-top: 1px;
+    display: flex;
+    align-items: flex-end;
 }
 
-.tabCt .tabItem>div{
-  box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
-  width: 80px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  text-align: center;
-  border: #ccc 1px solid;
-  font-size: 14px;
-}
-.tabCt .tabItem>div:first-child{
-  border-bottom-color: #fff;
+.tabCt .tabItem > div {
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    width: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    border: #ccc 1px solid;
+    font-size: 14px;
 }
 
-.content{
-  width: 970px;
-  margin: 5px auto;
-  display: flex;
-  flex-flow: row wrap;
+.tabCt .tabItem > div:first-child {
+    border-bottom-color: #fff;
 }
 
-.content>div{
-  padding: 60px;
-  flex: 80px;
-  text-align: center;
-  margin: 5px;
-  border: #ccc 1px solid;
+.content {
+    width: 970px;
+    margin: 5px auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-footer{
-  color: #fff;
-  font-size: 12px;
-  margin-top: 10px;
-  padding-top: 10px;
-  text-align: center;
+.content > div {
+    padding: 60px;
+    flex: 80px;
+    text-align: center;
+    margin: 5px;
+    border: #ccc 1px solid;
+}
+
+footer {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
 }

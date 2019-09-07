@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>两列布局左适应</title>
+    <style media="screen">
+
+      html,body{
+        margin:0;
+        padding: 0;
+      }
+
+      #container{
+        display:table;
+        height: 100vh;
+        width: 100%;
+      }
+
+      #sideBar,#content{
+        display:table-cell;
+        height: 100%;
+        background: red;
+      }
+
+      #content{
+        width: 300px;
+        background: green;
+      }
+
+
+    </style>
+  </head>
+  
+  <body>
+    <div id="container">
+      <div id="sideBar"></div>
+      <div id="content"></div>
+    </div>
+  </body>
+</html>

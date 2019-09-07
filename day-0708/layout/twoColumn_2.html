@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BFC两列布局右适应</title>
+  </head>
+
+  <style media="screen">
+
+    html,body{
+      margin:0;
+      padding: 0;
+    }
+
+    #sideBar,#content{
+      height: 100vh;
+      background: red;
+    }
+
+    #content{
+      background: green;
+    }
+
+    #sideBar{
+      width: 300px;
+      float: left;
+    }
+
+    #content{
+      overflow: hidden; /*BFC*/
+    }
+
+  </style>
+  <body>
+
+      <div id="sideBar"></div>
+      <div id="content"></div>
+
+  </body>
+</html>

@@ -1,0 +1,184 @@
+html,
+body {
+    min-width: 1300px;
+    margin: 0;
+    padding: 0;
+
+    font-family: Montserrat;
+    font-size: 12px;
+
+    background: #282828;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* @media screen and (max-width: 1300px){
+    body{
+        font-size: 12px;
+    }
+} */
+
+big {
+    font-size: 20px;
+}
+
+.content{
+    width: 1600px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 990px;
+    width: 100%;
+
+    color: #fff;
+   
+    background-image: url(./images/Background.png);
+    /* background-size: 100% auto;
+    background-position:center;
+    background-repeat: no-repeat; */
+
+   
+}
+header > h1 {
+    font-size: 30px;
+    font-weight: 400;
+}
+header > p {
+    color: #858074;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-wrap {
+    width: 970px;
+    height: 250px;
+    padding-top: 40px;
+    margin-top: 40px;
+    border: 1px solid #858074;
+}
+.login-wrap > p {
+    text-align: center;
+}
+.login-wrap > p:nth-child(2){
+    color: #575551;
+}
+
+.userform {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 40px;
+}
+.userform > input {
+    min-width: 350px;
+    border-radius: 2px;
+    border:1px solid #575551;
+    padding-left: 20px;
+
+    color: #fff;
+
+    background: transparent;
+}
+
+.desc-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 770px;
+    padding: 0 280px;
+
+    background: #fff;
+}
+.desc-content > p:first-child {
+    font-weight: 600;
+    text-align: center;
+
+    padding-top: 50px;
+
+    font-size: 14px;
+}
+.desc-content > p:nth-child(2) {
+    text-align: center;
+    font-size: 30px;
+}
+
+.desc-block {
+    display: flex;
+    flex-flow: row wrap;
+
+    margin: 20px 0;
+}
+.desc-block > div {
+    display: flex;
+    justify-content: center;
+    
+    width: 50%;
+    height: 150px;
+    
+}
+.desc-block > div p {
+    width: 280px;
+}
+.desc-block img {
+    width: auto;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+
+.getProduct {
+    height: 800px;
+    padding-top: 180px;
+    padding-left: 300px;
+
+    background-image: url(./images/Background-01.png)
+}
+.getProduct > p {
+    width: 386px;
+}
+.getProduct > p:first-child {
+    font-size: 42px;
+    color: #fff;
+}
+.getProduct > p:nth-child(2) {
+    font-size: 18px;
+    color: #ccc;
+}
+.getProduct .btn-group {
+    display: flex;
+}
+
+.getProduct .btn-group img {
+    margin-right: 20px;
+}
+
+.tryProduct {
+    height: 580px;
+    background: #fff;
+}
+.tryProduct h1 {
+    padding-top: 90px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 42px;   
+}
+.tryProduct .display-content {
+    display: flex;
+    margin: 70px 250px;
+}
+.display-content > div {
+    width: 330px;
+    text-align: center;
+}
+

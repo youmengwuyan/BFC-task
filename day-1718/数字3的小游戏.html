@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字3的小游戏</title>
+</head>
+<body>
+    
+    <script>
+        let start = 1;
+        do {          
+            let result = (start%3 === 0 || start.toString().includes('3'))?'PA':start;
+            console.log(result)
+            start ++;
+        } while (start <= 100);
+    </script>
+</body>
+</html>

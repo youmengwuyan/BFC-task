@@ -2,6 +2,8 @@ html,
 body {
     height: 100%;
     margin: 0;
+
+    color: #666;
 }
 
 nav {
@@ -80,7 +82,10 @@ header {
     padding: 10px;
     border-bottom: 1px solid #f0f0f0;
 }
-
+header > span:first-child {
+    padding-left: 10px;
+    color: #666;
+}
 header .avatar-area {
     display: flex;
     align-items: center;
@@ -121,6 +126,7 @@ header section > div:nth-child(2) {
     align-items: center;
     overflow: hidden;    /*BFC*/
     height: 100%;
+
 }
 
 .tool-bar .tools {
@@ -213,7 +219,7 @@ header section > div:nth-child(2) {
 
 .liaison-list li {
     position: relative;
-    height: 120px;
+    height: 80px;
     padding: 10px 20px;
     list-style-type: none;
     border-bottom: 1px solid #f0f0f0;
@@ -226,11 +232,69 @@ header section > div:nth-child(2) {
     position: absolute;
     left: 0;
     top: 0;
-    height: 140px;
+    height: 100px;
     width: 4px;
     background: #2399f1;
 }
+.liaison-item {
+    display: flex;
+    align-items: center;
+}
 
+.liaision-active {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.liaision-active > div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.liaision-active > div > span:first-child {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2399f1;
+}
+.liaision-active > div > span:nth-child(2) {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+}
+
+.liaision-active > div:nth-child(2) {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.chat-summarize {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-summarize > span:first-child {
+    display: block;
+    overflow: hidden;
+    width: calc(100% - 20px);
+
+    color: #999;
+    font-size: 12px;
+}
+.chat-summarize > span:nth-child(2) {
+    display: block;
+    float: right;
+
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #2399f1;
+
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+    font-size: 12px;
+}
 .chat-area .concat-list {
     overflow: hidden;
     border-right: 1px solid #f0f0f0;
@@ -247,6 +311,32 @@ header section > div:nth-child(2) {
     color: #ccc;
 }
 
-.concat-list section {
-   
+.chat-card {
+    display: flex;
 }
+
+.chat-card > img:first-child {
+    height: 50px;
+    width: 50px;
+
+    margin: 14px;
+}
+.chat-text {
+    width: calc(100% - 20px);
+}
+
+.chat-text > p:first-child {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.chat-text > p:first-child > span:nth-child(2) {
+    padding-left: 10px;
+    color: #999;
+}
+
+.chat-text > p:nth-child(2) {
+    font-size: 12px;
+    color: #999;
+}
+ 

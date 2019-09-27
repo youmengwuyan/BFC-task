@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用延时的淡入淡出</title>
+</head>
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+    <script>
+        /***
+        针对以上 HTML，分别使用 setTimeout 和 setInterval 实现以下功能：
+        1、点击按钮时，开始改变 fade-obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0
+        2、在动画过程中，按钮的状态变为不可点击
+        3、在动画结束后，按钮状态恢复，且文字变成“淡入”
+        4、在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明
+        5、淡入动画结束后，按钮文字变为“淡出”
+        6、暂时不要使用 CSS animation （以后我们再学习）
+        ***/
+
+
+        // 利用setTimeout实现
+        function $(str){
+            return document.querySelector(str)
+        }
+        let btn = $('#fade-btn');
+        let fadeObj = $('#fade-obj');
+
+        btn.addEventListener('click',function(e){
+            let event = e||window.event;
+            let target = e.target || e.srcElement;
+            console.log(target.innerText)
+            let btnText = target.innerText;
+            fade();
+            //fadeByInterval();
+        })
+
+        let fadeOutCount;
+        let op = 10;
+
+        /**
+         * setTimeout实现方式
+         **/
+        function fade(){
+            let fadedir = btn.innerText;
+
+            fadedir==='淡出'? op--:op++;
+            fadeObj.style.opacity = op/10;
+            btn.setAttribute('disabled',true);
+
+            if(op === (fadedir==='淡出'?0:10)){
+                btn.removeAttribute('disabled');
+                btn.innerText = fadedir==='淡出'?'淡入':'淡出';
+                window.clearTimeout(fadeOutCount);
+            }else {
+                // 此处延时函数若要传递参数需要通过apply改写
+                fadeOutCount = setTimeout('fade()',50);   
+            }
+        }
+
+        /**
+         * setInterval实现方式
+         **/
+        function fadeByInterval() {
+            let fadedir = btn.innerText;
+
+            btn.setAttribute('disabled',true);
+            fadeOutCount = setInterval(function(){
+                fadedir==='淡出'? op--:op++;
+                fadeObj.style.opacity = op/10;
+                if(op === (fadedir==='淡出'?0:10)){
+                    
+                    btn.innerText = fadedir==='淡出'?'淡入':'淡出';
+                    btn.removeAttribute('disabled');
+                    window.clearInterval(fadeOutCount);
+                }
+            },50)
+        }
+
+    </script>
+</body>
+</html>

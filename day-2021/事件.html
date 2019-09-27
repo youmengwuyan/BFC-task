@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+</head>
+<body>
+    <input id="name" type="text">    
+    <button id="submit-btn">Submit</button>
+
+    <script>
+        /**
+        当点击按钮 submit-btn 时，在console中输出 name 中的内容
+        在输入过程中，如果按回车键，则同样执行上一条的需求
+        在输入过程中，如果按 ESC 键，则把输入框中的内容清空
+        **/
+
+        
+        let btn = document.getElementById('submit-btn');
+        let text = document.getElementById('name');
+
+        btn.addEventListener('click',function(){
+            console.info(text.value);
+        })
+
+        // 使用keypress时esc无效
+        text.addEventListener('keyup',function(e){
+
+            // 早期的ie，chome使用keyCode，fireFox使用which，新版的两个属性都支持
+            let code = e.keyCode || e.which;  
+
+            if(code === 13){
+                console.info(text.value);
+            }else if(code === 27){
+                text.value = '';
+            }
+        })
+    </script>
+</body>
+
+</html>

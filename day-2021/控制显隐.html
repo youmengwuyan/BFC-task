@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        select {
+            display: none;
+        }
+    </style>
+</head>
+<body>            
+    <label>
+        <input id="school" name="status" type="radio">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+
+    <script>
+        /***
+        当用户选择了 School 的单选框时，显示 School 的下拉选项，隐藏 Company 的下拉选项
+        当用户选择了 School 的单选框时，显示 Company 的下拉选项，隐藏 School 的下拉选项
+        ***/
+
+        let schoolRadio = document.getElementById('school');
+        let company = document.getElementById('company');
+
+        schoolRadio.addEventListener('click',toggleSelect);
+        company.addEventListener('click',toggleSelect);
+
+ 
+        function toggleSelect(e) {
+            
+            let idText = e.target.id;
+
+            // 写法一：较通用，代码比较好看，额外多一次性能消耗
+            document.querySelectorAll('select').forEach(data=>{
+                data.style.display = 'none';
+            }) 
+            document.getElementById(`${idText}-select`).style.display = 'block'
+
+            // 写法二: 少一次性能消耗，编写麻烦
+            // let schoolSelect = document.getElementById('school-select');
+            // let companySelect = document.getElementById('company-select');
+            // switch(idText) {
+            //     case 'school':
+            //         companySelect.style.display = 'none';
+            //         schoolSelect.style.display = 'block';
+            //         break;
+            //     case 'company':
+            //         schoolSelect.style.display = 'none';
+            //         companySelect.style.display = 'block';
+            //         break
+            // }
+        }
+
+
+
+    </script>
+</body>
+</html>

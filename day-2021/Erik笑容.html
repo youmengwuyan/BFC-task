@@ -36,6 +36,7 @@
             注意，依然不要使用 CSS animation，因为我们这里要学习的是使用 JavaScript 来操作 CSS，而不是为了完成这个任务。
         **/
         
+        // 防止github预览闪烁问题，需要加载完毕后执行脚本
         window.onload = function(){
             let dom = document.querySelector('#smile');
             let y = 0;
@@ -54,7 +55,7 @@
                 if(y === 0) {
                     dir = 'forward'
                 }
-            },100)
+            },200)
         }
 
         

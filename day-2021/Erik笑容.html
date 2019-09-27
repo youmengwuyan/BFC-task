@@ -35,26 +35,29 @@
             图片地址：http://ife.baidu.com/2016/static/img/erik_ce204002.jpg
             注意，依然不要使用 CSS animation，因为我们这里要学习的是使用 JavaScript 来操作 CSS，而不是为了完成这个任务。
         **/
+        
+        window.onload = function(){
+            let dom = document.querySelector('#smile');
+            let y = 0;
+            let dir = 'forward';
 
+            setInterval(function(){
+                
+                dir === 'forward'?y -= 480: y +=480;
+                // 采用px，则正向为向上，和传统坐标轴一致。采用百分比，则100% 100%在右下角
+                dom.style.backgroundPosition = `0 ${y}px`;
 
-        let dom = document.querySelector('#smile');
-        let y = 0;
-        let dir = 'forward';
+                if(y === -7200){
+                    dir = 'backforward'
+                }
 
-        setInterval(function(){
-            
-            dir === 'forward'?y -= 480: y +=480;
-            // 采用px，则正向为向上，和传统坐标轴一致。采用百分比，则100% 100%在右下角
-            dom.style.backgroundPosition = `0 ${y}px`;
+                if(y === 0) {
+                    dir = 'forward'
+                }
+            },100)
+        }
 
-            if(y === -7200){
-                dir = 'backforward'
-            }
-
-            if(y === 0) {
-                dir = 'forward'
-            }
-        },100)
+        
     </script>
 </body>
 </html>

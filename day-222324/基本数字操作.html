@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+        <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
+    </div>
+    <div>
+        <button id="btn1">判断当前选中的输入框输入内容是否为数字</button>
+        <button id="btn2">把 A 四舍五入为 B 个小数位数的数字</button>
+        <button id="btn3">当前选中数字的绝对值</button>
+        <button id="btn4">对当前选中的数字进行上舍入</button>
+        <button id="btn5">对当前选中的数字进行下舍入</button>
+        <button id="btn6">把当前选中的数字四舍五入为最接近的整数</button>
+        <button id="btn7">返回 A 和 B 中的最高值</button>
+        <button id="btn8">返回 A 和 B 中的最低值</button>        
+    </div>
+    <p id="result"></p>
+
+    <script>
+        /**
+         * 将input类型设置为number可以避免很多问题
+         * 此处作为数字的练习，以text为主
+         **/
+       
+        // 使用全局变量的方式并不好，此处因练习原因，方便起见，使用了全局变量
+        let inputA = document.querySelector('#num-a');
+        let inputB = document.querySelector('#num-b');
+        let result = document.querySelector('#result');
+
+  
+        function isNumber(obj) {
+            // 严格判断的写法，但是当前的需求涉及将文本转为数字，故只能使用非严格模式,即采用isNaN进行判断
+            // return obj === +obj
+            return !isNaN(obj);     // 采用isFinite也可实现类似
+        }
+
+        function getRadioValue(){
+            let radio = document.querySelectorAll("[name=math-obj]");
+            for(let i = 0;i < radio.length;i++){
+                if(radio[i].checked){
+                    return radio[i].value;
+                }
+            }
+            return ''
+        }
+
+        function getValueByChecked(){
+            let selected = getRadioValue();
+
+            if(!selected){
+                result.innerText = '请选择一个输入框';
+                return false;
+            }
+
+            let value = document.querySelector(`#num-${selected}`).value;
+            return  value;
+        }
+
+        // 判断当前选中的输入框输入内容是否为数字
+        document.querySelector('#btn1').addEventListener('click',function(){
+     
+            let value = getValueByChecked();
+            if(value === false) return
+
+            result.innerText = isNumber(value)?'是数字':'不是数字';
+        })
+
+        // 把 A 四舍五入为 B 个小数位数的数字
+        document.querySelector('#btn2').addEventListener('click',function(){
+            let valueA = inputA.value;
+            let valueB = inputB.value;
+            if(!(isNumber(valueA) && isNumber(valueB))){
+                console.log("存在非数字");
+                return false;
+            }
+
+            let showValue = parseFloat(valueA).toFixed(parseInt(valueB));
+            result.innerText = showValue;
+        })
+
+        // 当前选中数字的绝对值
+        document.querySelector('#btn3').addEventListener('click',function(){
+            let value = getValueByChecked();
+            if(value === false) return
+            
+            result.innerText = Math.abs(value);
+
+        })
+
+        // 对当前选中的数字进行上舍入
+        document.querySelector('#btn4').addEventListener('click',function(){
+            let value = getValueByChecked();
+            if(value === false) return
+            
+            result.innerText = Math.ceil(value);
+        })
+
+        // 对当前选中的数字进行下舍入
+        document.querySelector('#btn5').addEventListener('click',function(){
+            let value = getValueByChecked();
+            if(value === false) return
+            
+            result.innerText = Math.floor(value);
+        })
+
+
+        // 把当前选中的数字四舍五入为最接近的整数
+        document.querySelector('#btn6').addEventListener('click',function(){
+            let value = getValueByChecked();
+            if(value === false) return
+            
+            result.innerText = Math.round(value);
+        })
+
+        // 返回 A 和 B 中的最高值
+        document.querySelector('#btn7').addEventListener('click',function(){
+            let valueA = inputA.value;
+            let valueB = inputB.value;
+            if(!(isNumber(valueA) && isNumber(valueB))){
+                console.log("存在非数字");
+                return false;
+            }
+
+            let showValue = Math.max(valueA,valueB);
+            result.innerText = showValue;
+        })
+
+        // 返回 A 和 B 中的最低值
+        document.querySelector('#btn8').addEventListener('click',function(){
+            let valueA = inputA.value;
+            let valueB = inputB.value;
+            if(!(isNumber(valueA) && isNumber(valueB))){
+                console.log("存在非数字");
+                return false;
+            }
+
+            let showValue = Math.min(valueA,valueB);
+            result.innerText = showValue;;
+        })
+    </script>
+</body>
+
+
+</html>
